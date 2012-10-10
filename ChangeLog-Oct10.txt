@@ -1,0 +1,15 @@
+I added the Library into the git, if the project wont build follow this instructions.
+
+1. Make a new android project from source
+2. set the root for this project to the library folder in the workspace (i.e Capstone/NAUFitnessApp/library)
+3. Right click the new project, go to buildpath -> configure build path
+4. Click the libraries tab, verify that the "android-support-v4,jar is listed (should be from FitnessApp/libs)
+5. Click on the "Android" tab in the side bar, set the build target to Android 4.0.3 if it is not
+6. Verify that "Is Library" is checked then click Ok
+7. Right click FitnessApp project
+8. Navigate to Android tab in sidebar
+9. In the library section click "add" and add the project we just set up (should be the only one listed) click ok.
+
+Other changes in this build:
+
+-Added tab display to main menu (with 3 tabs). Check the source for documentation on how this all works.

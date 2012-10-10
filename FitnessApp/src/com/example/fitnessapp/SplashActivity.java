@@ -4,26 +4,25 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.ImageButton;
-import android.widget.Toast;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.support.v4.app.NavUtils;
 
 public class SplashActivity extends Activity {
 
 	ImageButton logoButton;
 	
+	//Called when the activity is first created
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Sets the layout to use the correct file
         setContentView(R.layout.splash);
         
         initializeApp();
     }
-
+    
+    //Inflates the menu and loads the relevant layout
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.splash, menu);
@@ -32,18 +31,20 @@ public class SplashActivity extends Activity {
     
     public void initializeApp()
     {
+    	//Loads the logoButton from the layout file
     	logoButton = (ImageButton) findViewById(R.id.logoButton);
     	
+    	//Sets the listener for the button for when its clicked
     	logoButton.setOnClickListener(new OnClickListener() {
  
 			public void onClick(View arg0) {
- 
-			   /*Toast.makeText(SplashActivity.this,
-				"ImageButton is clicked!", Toast.LENGTH_SHORT).show();*/
-				//Starting a new Intent
+				//Start a new Intent - MainScreen
                 Intent nextScreen = new Intent(getApplicationContext(), MainScreen.class);
- 
+                
+                //Start this activity - Replace this Screen with the new activity
                 startActivity(nextScreen);
+                
+                //Kill this activity, never return
                 finish();
 			}
  
