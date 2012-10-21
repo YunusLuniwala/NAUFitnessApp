@@ -4,7 +4,7 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="#003466">
+  android:background="#263765">
  
   <!-- Screen Design for Track -->
   <TextView android:text="Track"
@@ -13,5 +13,11 @@
             android:textSize="18dip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"/>
+
+  <Button
+      android:id="@+id/button1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Scan" />
  
 </LinearLayout>
