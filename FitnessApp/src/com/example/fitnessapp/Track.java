@@ -1,5 +1,11 @@
 package com.example.fitnessapp;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import com.actionbarsherlock.app.SherlockFragment;
 
 import android.content.Intent;
@@ -18,6 +24,7 @@ import android.content.ActivityNotFoundException;
  
 public class Track extends SherlockFragment {
 	Button scanButton;
+	Button readButton;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,7 @@ public class Track extends SherlockFragment {
     {
     	//Loads the logoButton from the layout file
     	scanButton = (Button) getActivity().findViewById(R.id.button1);
+    	readButton = (Button) getActivity().findViewById(R.id.button2);
     	
     	//Sets the listener for the button for when its clicked
     	scanButton.setOnClickListener(new OnClickListener() {
@@ -42,6 +50,38 @@ public class Track extends SherlockFragment {
 				Intent intent = new Intent("com.google.zxing.client.android.SCAN");
                 intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intent, 0);
+			}
+ 
+		});
+    	
+    	readButton.setOnClickListener(new OnClickListener() {
+    		 
+			public void onClick(View arg0) {
+				String FILENAME = "exerciselog.txt";
+				try {
+					FileInputStream fis = new FileInputStream(FILENAME);
+					InputStreamReader isr = new InputStreamReader(fis);
+					BufferedReader br = new BufferedReader(isr);
+					
+					String newLine = "";
+					String output = "";
+					while((newLine = br.readLine()) != null){
+						output += newLine;
+					}
+					Toast toast = Toast.makeText(getActivity().getApplicationContext(), output, Toast.LENGTH_LONG);
+					toast.setGravity(Gravity.TOP, 25, 400);
+					toast.show();
+				} catch (FileNotFoundException e) {
+					Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Error1.", Toast.LENGTH_LONG);
+					toast.setGravity(Gravity.TOP, 25, 400);
+					toast.show();
+					e.printStackTrace();
+				} catch (IOException e) {
+					Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Error2.", Toast.LENGTH_LONG);
+					toast.setGravity(Gravity.TOP, 25, 400);
+					toast.show();
+					e.printStackTrace();
+				}
 			}
  
 		});

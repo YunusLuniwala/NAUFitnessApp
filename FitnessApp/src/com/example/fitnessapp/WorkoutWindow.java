@@ -1,9 +1,14 @@
 package com.example.fitnessapp;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -39,36 +44,10 @@ public class WorkoutWindow extends Activity {
         
         Intent myIntent = getIntent();
         String firstKeyName = myIntent.getStringExtra("workout");
-        LoadText(R.raw.workoutlog);
-        
         initializeApp(firstKeyName);
     }
-
-    public void LoadText(int resourceId) {
-        // The InputStream opens the resourceId and sends it to the buffer
-        InputStream is = this.getResources().openRawResource(resourceId);
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        String readLine = null;
-
-        try {
-            // While the BufferedReader readLine is not null 
-            while ((readLine = br.readLine()) != null) {
-            Toast toast = Toast.makeText(getApplicationContext(), readLine, Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP, 25, 400);
-            toast.show();
-            Log.d("TEXT", readLine);
-        }
-
-        // Close the InputStream and BufferedReader
-        is.close();
-        br.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     
-    public void initializeApp(String machine) {
+    public void initializeApp(final String machine) {
     	
     	//TODO - Load in the file name from the QR code and rename the labels and set up custom fields
     	
@@ -108,6 +87,43 @@ public class WorkoutWindow extends Activity {
     	saveButton.setOnClickListener(new OnClickListener() {
  
 			public void onClick(View arg0) {
+				Date date = new Date();
+				String FILENAME = "exerciselog.txt";
+				String newLog = "Date: " + (new Timestamp(date.getTime())) + ", WORKOUT: " + machine + " " + 
+						sets.getText().toString() + " " + setsField.getText().toString() + " " + 
+						reps.getText().toString() + " " + repsField.getText().toString();
+				
+				try {
+					FileOutputStream fos = openFileOutput(FILENAME, MODE_APPEND);
+					fos.write(newLog.getBytes());
+					fos.close();
+					
+					Toast toast = Toast.makeText(getApplicationContext(), "Saved Log.", Toast.LENGTH_SHORT);
+					toast.setGravity(Gravity.TOP, 25, 400);
+					toast.show();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				try {
+				    BufferedReader inputReader = new BufferedReader(new InputStreamReader(
+				            openFileInput("exerciselog.txt")));
+				    String inputString;
+				    StringBuffer stringBuffer = new StringBuffer();                
+				    while ((inputString = inputReader.readLine()) != null) {
+				        stringBuffer.append(inputString + "\n");
+				    }
+				    Toast toast = Toast.makeText(getApplicationContext(), stringBuffer.toString(), Toast.LENGTH_SHORT);
+					toast.setGravity(Gravity.TOP, 25, 400);
+					toast.show();
+				} catch (IOException e) {
+				    e.printStackTrace();
+				}
+	            
                 finish();
 			}
  
