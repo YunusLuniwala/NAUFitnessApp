@@ -56,6 +56,12 @@ public class Track extends SherlockFragment {
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Content:" + contents + " Format:" + format , Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP, 25, 400);
                 toast.show();
+                //Start a new Intent - MainScreen
+                Intent nextScreen = new Intent(getActivity().getApplicationContext(), WorkoutWindow.class);
+                nextScreen.putExtra("workout", contents);
+                
+                //Start this activity - Replace this Screen with the new activity
+                startActivity(nextScreen);
             } else if (resultCode == 0) {
                 // Handle cancel
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Scan was Cancelled!", Toast.LENGTH_LONG);

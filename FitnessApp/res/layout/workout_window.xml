@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#263765">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+
+
+        <TextView
+            android:id="@+id/sets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="75dp"
+            android:textSize="30dp"
+            android:text="SETS"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/reps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sets"
+            android:layout_centerVertical="true"
+            android:textSize="30dp"
+            android:text="REPS"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/reps"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="75dp"
+            android:textSize="30dp"
+            android:text="WEIGHT"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/setsField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sets"
+            android:layout_alignBottom="@+id/sets"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/weight"
+            android:ems="10"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/repsField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/reps"
+            android:layout_alignLeft="@+id/setsField"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/weightField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/weight"
+            android:layout_alignLeft="@+id/repsField"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textSize="15dp"
+            android:text="EXERCISE"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="SAVE" />
+
+    </RelativeLayout>
+>
+    
+
+</LinearLayout>

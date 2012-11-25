@@ -24,6 +24,10 @@
             android:name=".MainScreen"
             android:label="@string/title_activity_main">
         </activity>
+        <activity
+            android:name=".WorkoutWindow"
+            android:label="@string/workout_label">
+        </activity>
     </application>
 
 </manifest>

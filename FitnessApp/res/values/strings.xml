@@ -6,5 +6,6 @@
     <string name="title_activity_main">NAU Fitness App</string>
     <string name="logoDesc">NAU Logo</string>
     <string name="title_activity_splash">NAU Fitness App</string>
+    <string name="workout_label">Workout</string>
 
 </resources>
