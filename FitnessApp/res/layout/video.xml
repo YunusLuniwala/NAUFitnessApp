@@ -6,8 +6,8 @@
   android:layout_height="match_parent"
   android:background="#263765">
  
-  <!-- Screen Design for Schedule -->
-  <TextView android:text="News Feed"
+  <!-- Screen Design for Track -->
+  <TextView android:text="Video"
       		android:textColor="#FFFFFF"
             android:padding="15dip"
             android:textSize="18dip"

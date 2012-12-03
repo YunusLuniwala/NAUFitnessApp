@@ -1,30 +1,22 @@
 package com.example.fitnessapp;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 import com.actionbarsherlock.app.SherlockFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
 
  
 public class Track extends SherlockFragment {
 	Button scanButton;
+	Button manualButton;
 	Button readButton;
+	Button trainerButton;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,8 +31,11 @@ public class Track extends SherlockFragment {
 	public void initializeApp()
     {
     	//Loads the logoButton from the layout file
-    	scanButton = (Button) getActivity().findViewById(R.id.button1);
-    	readButton = (Button) getActivity().findViewById(R.id.button2);
+    	scanButton = (Button) getActivity().findViewById(R.id.scanCode);
+    	readButton = (Button) getActivity().findViewById(R.id.viewLog);
+    	manualButton = (Button) getActivity().findViewById(R.id.manualEnter);
+    	trainerButton = (Button) getActivity().findViewById(R.id.trainerBio);
+    	
     	
     	//Sets the listener for the button for when its clicked
     	scanButton.setOnClickListener(new OnClickListener() {
@@ -57,31 +52,21 @@ public class Track extends SherlockFragment {
     	readButton.setOnClickListener(new OnClickListener() {
     		 
 			public void onClick(View arg0) {
-				String FILENAME = "exerciselog.txt";
-				try {
-					FileInputStream fis = new FileInputStream(FILENAME);
-					InputStreamReader isr = new InputStreamReader(fis);
-					BufferedReader br = new BufferedReader(isr);
-					
-					String newLine = "";
-					String output = "";
-					while((newLine = br.readLine()) != null){
-						output += newLine;
-					}
-					Toast toast = Toast.makeText(getActivity().getApplicationContext(), output, Toast.LENGTH_LONG);
-					toast.setGravity(Gravity.TOP, 25, 400);
-					toast.show();
-				} catch (FileNotFoundException e) {
-					Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Error1.", Toast.LENGTH_LONG);
-					toast.setGravity(Gravity.TOP, 25, 400);
-					toast.show();
-					e.printStackTrace();
-				} catch (IOException e) {
-					Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Error2.", Toast.LENGTH_LONG);
-					toast.setGravity(Gravity.TOP, 25, 400);
-					toast.show();
-					e.printStackTrace();
-				}
+				Intent nextScreen = new Intent(getActivity().getApplicationContext(), LogScrollView.class);
+                
+                //Start this activity - Replace this Screen with the new activity
+                startActivity(nextScreen);
+			}
+ 
+		});
+    	
+    	manualButton.setOnClickListener(new OnClickListener() {
+   		 
+			public void onClick(View arg0) {
+				Intent nextScreen = new Intent(getActivity().getApplicationContext(), ManualWorkout.class);
+                
+                //Start this activity - Replace this Screen with the new activity
+                startActivity(nextScreen);
 			}
  
 		});

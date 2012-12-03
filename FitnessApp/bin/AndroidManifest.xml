@@ -28,6 +28,14 @@
             android:name=".WorkoutWindow"
             android:label="@string/workout_label">
         </activity>
+        <activity 
+            android:name=".LogScrollView" 
+            android:label="@string/log_view">
+        </activity>
+        <activity 
+            android:name=".ManualWorkout" 
+            android:label="@string/workout_label">
+        </activity>
     </application>
 
 </manifest>

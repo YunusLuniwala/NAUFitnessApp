@@ -17,15 +17,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
-import android.content.Intent;
 
-public class WorkoutWindow extends Activity {
+public class ManualWorkout extends Activity {
 	
 	Button saveButton;
 	TextView sets;
 	TextView reps;
 	TextView weight;
-	TextView exercise;
+	EditText exercise;
 	EditText setsField;
 	EditText repsField;
 	EditText weightField;
@@ -36,14 +35,11 @@ public class WorkoutWindow extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Sets the layout to use the correct file
-        setContentView(R.layout.workout_window);
-        
-        Intent myIntent = getIntent();
-        String firstKeyName = myIntent.getStringExtra("workout");
-        initializeApp(firstKeyName);
+        setContentView(R.layout.manual_workout);
+        initializeApp();
     }
     
-    public void initializeApp(final String machine) {
+    public void initializeApp() {
     	
     	//TODO - Load in the file name from the QR code and rename the labels and set up custom fields
     	
@@ -54,30 +50,18 @@ public class WorkoutWindow extends Activity {
     	sets = (TextView) findViewById(R.id.sets);
     	reps = (TextView) findViewById(R.id.reps);
     	weight = (TextView) findViewById(R.id.weight);
-    	exercise = (TextView) findViewById(R.id.exercise);
+    	exercise = (EditText) findViewById(R.id.exercise);
     	setsField = (EditText) findViewById(R.id.setsField);
     	repsField = (EditText) findViewById(R.id.repsField);
     	weightField = (EditText) findViewById(R.id.weightField);
     	
-    	if(machine.equalsIgnoreCase("Track Workout")) 
-    	{
-    		sets.setText("LAPS:");
-    		reps.setText("TIME:");
-    		exercise.setText("RUNNING");
-    		weight.setEnabled(false);
-    		weightField.setEnabled(false);
-    		weight.setVisibility(4);
-    		weightField.setVisibility(4);
-    	}else 
-    	{
-    		sets.setText("SETS:");
-    		reps.setText("REPS:");
-    		exercise.setText(machine.toUpperCase());
-    		weight.setEnabled(true);
-    		weightField.setEnabled(true);
-    		weight.setVisibility(0);
-    		weightField.setVisibility(0);
-    	}
+    	
+    	sets.setText("SETS:");
+    	reps.setText("REPS:");
+    	weight.setEnabled(true);
+    	weightField.setEnabled(true);
+    	weight.setVisibility(0);
+    	weightField.setVisibility(0);
     	
     	//Sets the listener for the button for when its clicked
     	saveButton.setOnClickListener(new OnClickListener() {
@@ -85,7 +69,7 @@ public class WorkoutWindow extends Activity {
 			public void onClick(View arg0) {
 				Date date = new Date();
 				String FILENAME = "exerciselog.txt";
-				String newLog = "Date: " + (new Timestamp(date.getTime())) + ", WORKOUT: " + machine + " " + 
+				String newLog = "Date: " + (new Timestamp(date.getTime())) + ", WORKOUT: " + exercise.getText().toString() + " " + 
 						sets.getText().toString() + " " + setsField.getText().toString() + " " + 
 						reps.getText().toString() + " " + repsField.getText().toString() + "\n";
 				
