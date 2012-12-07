@@ -930,6 +930,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int BodyTable=0x7f050038;
+        public static final int NewsImage=0x7f050043;
         public static final int abs__action_bar=0x7f050022;
         public static final int abs__action_bar_container=0x7f050021;
         public static final int abs__action_bar_subtitle=0x7f050011;
@@ -971,34 +972,42 @@ containing a value of this type.
         public static final int abs__titleDivider=0x7f05001c;
         public static final int abs__up=0x7f05000b;
         public static final int buildingButton=0x7f050034;
-        public static final int button1=0x7f05003f;
+        public static final int button1=0x7f050041;
         public static final int classButton=0x7f050033;
         public static final int content=0x7f050036;
         public static final int disableHome=0x7f050009;
         public static final int edit_query=0x7f050027;
-        public static final int exercise=0x7f050040;
+        public static final int exercise=0x7f050042;
         public static final int homeAsUp=0x7f050006;
+        public static final int imageView1=0x7f050047;
         public static final int listMode=0x7f050002;
-        public static final int logoButton=0x7f050041;
-        public static final int manualEnter=0x7f050043;
-        public static final int menu_settings=0x7f050046;
+        public static final int logoButton=0x7f05004a;
+        public static final int manualEnter=0x7f05004c;
+        public static final int menu_settings=0x7f05004f;
+        public static final int new_list1=0x7f050039;
+        public static final int newsContent=0x7f050045;
+        public static final int newsContent1=0x7f050048;
+        public static final int newsTitle=0x7f050044;
+        public static final int news_list=0x7f05003a;
         public static final int normal=0x7f050001;
-        public static final int reps=0x7f05003a;
-        public static final int repsField=0x7f05003d;
-        public static final int scanCode=0x7f050042;
+        public static final int reps=0x7f05003c;
+        public static final int repsField=0x7f05003f;
+        public static final int rowTextView=0x7f050049;
+        public static final int scanCode=0x7f05004b;
         public static final int scrollView1=0x7f050037;
-        public static final int sets=0x7f050039;
-        public static final int setsField=0x7f05003c;
+        public static final int sets=0x7f05003b;
+        public static final int setsField=0x7f05003e;
         public static final int showCustom=0x7f050008;
         public static final int showHome=0x7f050005;
         public static final int showTitle=0x7f050007;
         public static final int tabMode=0x7f050003;
         public static final int title=0x7f050035;
-        public static final int trainerBio=0x7f050045;
+        public static final int title1=0x7f050046;
+        public static final int trainerBio=0x7f05004e;
         public static final int useLogo=0x7f050004;
-        public static final int viewLog=0x7f050044;
-        public static final int weight=0x7f05003b;
-        public static final int weightField=0x7f05003e;
+        public static final int viewLog=0x7f05004d;
+        public static final int weight=0x7f05003d;
+        public static final int weightField=0x7f050040;
         public static final int wrap_content=0x7f050000;
     }
     public static final class integer {
@@ -1033,13 +1042,16 @@ containing a value of this type.
         public static final int logscrollview=0x7f030019;
         public static final int main_screen=0x7f03001a;
         public static final int manual_workout=0x7f03001b;
-        public static final int schedule=0x7f03001c;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001d;
-        public static final int sherlock_spinner_item=0x7f03001e;
-        public static final int splash=0x7f03001f;
-        public static final int track=0x7f030020;
-        public static final int video=0x7f030021;
-        public static final int workout_window=0x7f030022;
+        public static final int new_row_item=0x7f03001c;
+        public static final int news_layout=0x7f03001d;
+        public static final int schedule=0x7f03001e;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001f;
+        public static final int sherlock_spinner_item=0x7f030020;
+        public static final int simplerow=0x7f030021;
+        public static final int splash=0x7f030022;
+        public static final int track=0x7f030023;
+        public static final int video=0x7f030024;
+        public static final int workout_window=0x7f030025;
     }
     public static final class menu {
         public static final int log_view=0x7f0c0000;

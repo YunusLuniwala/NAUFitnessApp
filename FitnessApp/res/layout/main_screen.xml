@@ -3,5 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#263765" >
+    
+    <LinearLayout
+    android:id="@+id/new_list1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/news_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="20sp" >
+    </ListView>
+    
+</LinearLayout>
 
 </RelativeLayout>
