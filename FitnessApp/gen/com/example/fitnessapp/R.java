@@ -981,10 +981,11 @@ containing a value of this type.
         public static final int homeAsUp=0x7f050006;
         public static final int imageView1=0x7f050047;
         public static final int listMode=0x7f050002;
-        public static final int logoButton=0x7f05004a;
-        public static final int manualEnter=0x7f05004c;
-        public static final int menu_settings=0x7f05004f;
+        public static final int logoButton=0x7f05004b;
+        public static final int manualEnter=0x7f05004d;
+        public static final int menu_settings=0x7f050050;
         public static final int new_list1=0x7f050039;
+        public static final int newsButton=0x7f050049;
         public static final int newsContent=0x7f050045;
         public static final int newsContent1=0x7f050048;
         public static final int newsTitle=0x7f050044;
@@ -992,8 +993,8 @@ containing a value of this type.
         public static final int normal=0x7f050001;
         public static final int reps=0x7f05003c;
         public static final int repsField=0x7f05003f;
-        public static final int rowTextView=0x7f050049;
-        public static final int scanCode=0x7f05004b;
+        public static final int rowTextView=0x7f05004a;
+        public static final int scanCode=0x7f05004c;
         public static final int scrollView1=0x7f050037;
         public static final int sets=0x7f05003b;
         public static final int setsField=0x7f05003e;
@@ -1003,9 +1004,9 @@ containing a value of this type.
         public static final int tabMode=0x7f050003;
         public static final int title=0x7f050035;
         public static final int title1=0x7f050046;
-        public static final int trainerBio=0x7f05004e;
+        public static final int trainerBio=0x7f05004f;
         public static final int useLogo=0x7f050004;
-        public static final int viewLog=0x7f05004d;
+        public static final int viewLog=0x7f05004e;
         public static final int weight=0x7f05003d;
         public static final int weightField=0x7f050040;
         public static final int wrap_content=0x7f050000;

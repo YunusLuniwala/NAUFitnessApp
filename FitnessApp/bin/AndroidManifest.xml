@@ -36,6 +36,12 @@
             android:name=".ManualWorkout" 
             android:label="@string/workout_label">
         </activity>
+        <activity 
+            android:name=".News_List"> 
+        </activity>
+        <activity 
+            android:name=".NewsView"> 
+        </activity>
     </application>
 	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>
