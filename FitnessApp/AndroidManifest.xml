@@ -37,6 +37,15 @@
             android:label="@string/workout_label">
         </activity>
         <activity 
+            android:name=".StaffScreen" >
+        </activity>
+        <activity 
+            android:name=".StaffEmail" >
+        </activity>
+        <activity 
+            android:name=".BuildingHours" >
+        </activity>
+        <activity 
             android:name=".News_List"> 
         </activity>
         <activity 

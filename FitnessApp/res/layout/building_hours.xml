@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#263765">
+ 
+  <!-- Screen Design for Connect -->
+  <TextView android:text="Building Hours"
+      		android:textColor="#FFFFFF"
+            android:padding="15dip"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" >
+
+      <TextView
+          android:id="@+id/textView1"
+          android:textColor="#FFFFFF"
+          android:textSize="15sp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="18dp"
+          android:text="Campus Recreation Center" />
+
+      <TextView
+          android:id="@+id/textView2"
+          android:textColor="#FFFFFF"
+          android:textSize="15sp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@+id/textView1"
+          android:layout_marginTop="81dp"
+          android:text="Fitness Center" />
+
+      <TextView
+          android:id="@+id/textView3"
+          android:textColor="#FFFFFF"
+          android:textSize="15sp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@+id/textView2"
+          android:layout_marginTop="81dp"
+          android:text="Wall Aquatic Center" />
+
+      <TextView
+          android:id="@+id/textView4"
+          android:textColor="#FFFFFF"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView1"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="24dp"
+          android:text="Weekly: 6am-10pm" />
+      
+      <TextView
+          android:id="@+id/textView5"
+          android:textColor="#FFFFFF"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView2"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="24dp"
+          android:text="Weekly: 8am-8pm" />
+      
+      <TextView
+          android:id="@+id/textView6"
+          android:textColor="#FFFFFF"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView3"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="24dp"
+          android:text="Weekly: 11:30am-1:30pm amd 7pm-9pm" />
+
+  </RelativeLayout>
+ 
+</LinearLayout>

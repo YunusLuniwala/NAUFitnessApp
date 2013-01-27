@@ -22,13 +22,6 @@ public class SplashActivity extends Activity {
         initializeApp();
     }
     
-    //Inflates the menu and loads the relevant layout
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.splash, menu);
-        return true;
-    }
-    
     public void initializeApp()
     {
     	//Loads the logoButton from the layout file

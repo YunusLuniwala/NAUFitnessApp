@@ -17,24 +17,28 @@
   
   <Button
       android:id="@+id/scanCode"
+      android:textColor="#FFFFFF"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Scan Machine" />
 
   <Button
       android:id="@+id/manualEnter"
+      android:textColor="#FFFFFF"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Add New Workout To Log" />
 
   <Button
       android:id="@+id/viewLog"
+      android:textColor="#FFFFFF"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="View Workout Log" />
 
   <Button
       android:id="@+id/trainerBio"
+      android:textColor="#FFFFFF"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Personal Trainers" />

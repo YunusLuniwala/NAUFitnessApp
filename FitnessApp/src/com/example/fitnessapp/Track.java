@@ -4,6 +4,7 @@ package com.example.fitnessapp;
 import com.actionbarsherlock.app.SherlockFragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -67,6 +68,16 @@ public class Track extends SherlockFragment {
                 
                 //Start this activity - Replace this Screen with the new activity
                 startActivity(nextScreen);
+			}
+ 
+		});
+    	
+    	trainerButton.setOnClickListener(new OnClickListener() {
+ 
+			public void onClick(View arg0) {
+				Uri uri = Uri.parse("http://nau.edu/Recreation-Services/Fitness/Personal-Training/");
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
 			}
  
 		});

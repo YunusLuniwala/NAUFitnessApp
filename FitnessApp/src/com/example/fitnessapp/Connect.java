@@ -14,6 +14,7 @@ import android.widget.Button;
 public class Connect extends SherlockFragment {
 	
 	Button classButton;
+	Button buildingButton;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class Connect extends SherlockFragment {
     {
     	//Loads the logoButton from the layout file
     	classButton = (Button) getActivity().findViewById(R.id.classButton);
+    	buildingButton = (Button) getActivity().findViewById(R.id.buildingButton);
     	
     	//Sets the listener for the button for when its clicked
     	classButton.setOnClickListener(new OnClickListener() {
@@ -43,5 +45,16 @@ public class Connect extends SherlockFragment {
 			}
  
 		});
+    	
+    	buildingButton.setOnClickListener(new OnClickListener() {
+      		 
+   			public void onClick(View arg0) {
+   				Intent nextScreen = new Intent(getActivity().getApplicationContext(), BuildingHours.class);
+                   
+                   //Start this activity - Replace this Screen with the new activity
+                   startActivity(nextScreen);
+   			}
+    
+   		});
     }
 }

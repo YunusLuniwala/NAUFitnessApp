@@ -6,11 +6,15 @@ import java.io.InputStreamReader;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.view.Menu;
 
 public class LogScrollView extends Activity {
@@ -73,9 +77,7 @@ public class LogScrollView extends Activity {
 		    	}
 		    	date = date.substring(0,10);
 		    	String content = exercise + " " + sets + "sets X " + reps + "reps";
-		    	for(int i = 0; i < 4; i++){
-		    		tl.addView(this.tableChild(date,content));
-		    	}
+		    	tl.addView(this.tableChild(date,content));
 		    }
 		} catch (IOException e) {
 		    e.printStackTrace();
@@ -93,9 +95,40 @@ public class LogScrollView extends Activity {
         return v;//have to return View child, so return made 'v'
     }
     
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+    	if(item.getItemId() == 5) {
+    		String FILENAME = "exerciselog.txt";
+    		String emailText = "";
+    		try {
+    		    BufferedReader inputReader = new BufferedReader(new InputStreamReader(
+    		            openFileInput(FILENAME)));
+    		    String inputString; 
+    		    while ((inputString = inputReader.readLine()) != null) {
+    		    	emailText += inputString;
+    		    	emailText += "\r\n";
+    		    }
+    		} catch (IOException e) {
+    		    e.printStackTrace();
+    		}
+    		Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+			emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Fitness Log");
+			emailIntent.setType("text/plain");
+			emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, emailText);
+			startActivity(Intent.createChooser(emailIntent, "Send your email in:")); 
+    	}else {
+    		Toast toast = Toast.makeText(getApplicationContext(), "Coming Soon!" , Toast.LENGTH_LONG);
+    		toast.setGravity(Gravity.TOP, 25, 400);
+    		toast.show();
+    	}
+    	return super.onOptionsItemSelected(item);
+    }
+    
   //Inflates the menu and loads the relevant layout file
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.log_view, menu);
+        getMenuInflater().inflate(R.menu.main_screen, menu);
+        menu.add(1, 5, Menu.FIRST + 1, "Export");
         return true;
     }
 }

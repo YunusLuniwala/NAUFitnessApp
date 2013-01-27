@@ -1,8 +1,18 @@
 package com.example.fitnessapp;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.ActionBar;
+import android.content.Intent;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 
@@ -93,12 +103,14 @@ public class MainScreen extends SherlockFragmentActivity implements com.actionba
 		Log.d("SimpleActionBarTabsActivity","tab " 
                  + String.valueOf(tab.getPosition()) + " un-clicked");
 	}
-    
+	
 
 	//Inflates the menu and loads the relevant layout file
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getSupportMenuInflater().inflate(R.menu.main_screen, menu);
+        menu.add(1, 2, Menu.FIRST + 1, "Staff").setIntent(new Intent(getApplicationContext(), StaffScreen.class));
+        menu.add(1, 5, Menu.FIRST + 2, "Sample Video").setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
         return true;
     }
     

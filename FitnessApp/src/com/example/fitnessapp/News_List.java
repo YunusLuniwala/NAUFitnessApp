@@ -20,17 +20,18 @@ import org.json.JSONObject;
 
 
 
+import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class News_List extends ListActivity {
 	
@@ -39,11 +40,14 @@ public class News_List extends ListActivity {
 	private ArrayList<News> results;
 	
     /** Called when the activity is first created. */
-    @Override
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+    	StrictMode.setThreadPolicy(policy); 
         results = new ArrayList<News>();
         SQLiteDatabase sampleDB = null;
        
@@ -71,7 +75,7 @@ public class News_List extends ListActivity {
            //http post
            try{
                   HttpClient httpclient = new DefaultHttpClient();
-                  HttpPost httppost = new HttpPost("http://www.cefns.nau.edu/~drk46/fitnessapp/android/controllers.php?action=posts");
+                  HttpPost httppost = new HttpPost("http://www.cefns.nau.edu/~drk46/vpr-p/fitnessapp/android/controllers.php?action=posts");
                   httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                   HttpResponse response = httpclient.execute(httppost);
                   HttpEntity entity = response.getEntity();

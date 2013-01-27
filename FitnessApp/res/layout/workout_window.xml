@@ -49,6 +49,7 @@
 
         <EditText
             android:id="@+id/setsField"
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/sets"
@@ -63,6 +64,7 @@
 
         <EditText
             android:id="@+id/repsField"
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/reps"
@@ -72,6 +74,7 @@
 
         <EditText
             android:id="@+id/weightField"
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/weight"
@@ -92,6 +95,7 @@
 
         <Button
             android:id="@+id/button1"
+            android:textColor="#FFFFFF"
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_alignParentBottom="true"
