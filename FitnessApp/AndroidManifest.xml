@@ -13,7 +13,9 @@
         android:theme="@style/Theme.Sherlock.Light">
         <activity
             android:name=".SplashActivity"
-            android:label="@string/title_activity_splash" >
+            android:label="@string/title_activity_splash" 
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,34 +24,52 @@
         </activity>
         <activity
             android:name=".MainScreen"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".WorkoutWindow"
-            android:label="@string/workout_label">
+            android:label="@string/workout_label"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity 
             android:name=".LogScrollView" 
-            android:label="@string/log_view">
+            android:label="@string/log_view"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity 
             android:name=".ManualWorkout" 
-            android:label="@string/workout_label">
+            android:label="@string/workout_label"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity 
-            android:name=".StaffScreen" >
+            android:name=".StaffScreen" 
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity 
-            android:name=".StaffEmail" >
+            android:name=".StaffEmail" 
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity 
-            android:name=".BuildingHours" >
+            android:name=".BuildingHours" 
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
         </activity>
         <activity 
-            android:name=".News_List"> 
+            android:name=".News_List"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"> 
         </activity>
         <activity 
-            android:name=".NewsView"> 
+            android:name=".NewsView"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"> 
         </activity>
     </application>
 	<uses-permission android:name="android.permission.INTERNET"></uses-permission>

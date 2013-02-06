@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 
 import com.blundell.tut.R;
@@ -60,8 +61,8 @@ public class MainActivity extends Activity implements VideoClickListener {
 	// This is the interface method that is called when a video in the listview is clicked!
 	// The interface is a contract between this activity and the listview
 	public void onVideoClicked(Video2 video) {
-		Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setData(Uri.parse(video.getUrl()));
+		Log.i("TEST", "here");
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?" + video.getUrlID() + "&feature=youtube_gdata_player"));
 		startActivity(intent);
 	}
 }

@@ -56,8 +56,7 @@ public class Video extends SherlockFragment implements VideoClickListener {
 
 		// This is the interface method that is called when a video in the listview is clicked!
 		public void onVideoClicked(Video2 video) {
-			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setData(Uri.parse(video.getUrl()));
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?" + video.getUrlID() + "&feature=youtube_gdata_player"));
 			startActivity(intent);
 		}
 	}

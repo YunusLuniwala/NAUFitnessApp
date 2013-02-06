@@ -29,6 +29,12 @@ public class Video2 implements Serializable {
 	public String getUrl() {
 		return url;
 	}
+	
+	public String getUrlID(){
+		int index = url.indexOf("v=");
+		String v = url.substring(index);
+		return v;
+	}
 
 	//Return Thumbnail
 	public String getThumbUrl() {
