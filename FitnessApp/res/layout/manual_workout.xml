@@ -101,7 +101,7 @@
             android:gravity="center"
             android:ems="10" 
             android:textSize="15dp"
-            android:text="Enter Exercise Here"
+            android:hint="Enter Exercise Here"
             android:textColor="#FFFFFF"/>
 
     </RelativeLayout>

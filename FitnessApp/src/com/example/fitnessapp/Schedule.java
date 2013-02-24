@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.actionbarsherlock.app.SherlockFragment;
  
 public class Schedule extends SherlockFragment {
 	
-	Button newsfeed;
+	ImageButton newsfeed;
 	
     /** Called when the activity is first created. */
     @Override
@@ -22,7 +23,7 @@ public class Schedule extends SherlockFragment {
     }
     
     public void loadStuff() {
-    	newsfeed = (Button) getActivity().findViewById(R.id.newsButton);
+    	newsfeed = (ImageButton) getActivity().findViewById(R.id.refreshNews);
     	newsfeed.setOnClickListener(new OnClickListener() {
    		 
 			public void onClick(View arg0) {

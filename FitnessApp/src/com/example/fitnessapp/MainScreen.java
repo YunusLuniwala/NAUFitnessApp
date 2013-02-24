@@ -35,26 +35,26 @@ public class MainScreen extends SherlockFragmentActivity implements com.actionba
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
       	
         //Creates 4 tabs for the ActionBar (News, Video, Workout, Connect) and sets their titles
+        com.actionbarsherlock.app.ActionBar.Tab track = actionbar.newTab();
+        track.setText("Workout");
         com.actionbarsherlock.app.ActionBar.Tab schedule = actionbar.newTab();
         schedule.setText("News");
         com.actionbarsherlock.app.ActionBar.Tab video = actionbar.newTab();
         video.setText("Video");
-        com.actionbarsherlock.app.ActionBar.Tab track = actionbar.newTab();
-        track.setText("Workout");
         com.actionbarsherlock.app.ActionBar.Tab connect = actionbar.newTab();
         connect.setText("Schedule");
   	
         //Sets the TabListener for each tab to handle when a user clicks it
         //The listener methods are implemented by this class further below
-        schedule.setTabListener(this);
-        video.setTabListener(this);
         track.setTabListener(this);
+        video.setTabListener(this);
+        schedule.setTabListener(this);
         connect.setTabListener(this);
         
         //Adds the tabs to the ActionBar
-        actionbar.addTab(schedule);
+        actionbar.addTab(track);
         actionbar.addTab(video);
-  		actionbar.addTab(track);
+  		actionbar.addTab(schedule);
   		actionbar.addTab(connect);
     }
     
@@ -71,7 +71,7 @@ public class MainScreen extends SherlockFragmentActivity implements com.actionba
 		//If the tab clicked is in position 0, switch to Schedule Activity
 		if(tab.getPosition()==0)
 		{
-			Schedule frag = new Schedule();
+			Track frag = new Track();
 			
 			ft.replace(android.R.id.content, frag);
 		}
@@ -84,7 +84,7 @@ public class MainScreen extends SherlockFragmentActivity implements com.actionba
 		//If the tab clicked is in position 2, switch to Track Activity
 		else if(tab.getPosition()==2)
 		{
-			Track frag = new Track();
+			Schedule frag = new Schedule();
 			ft.replace(android.R.id.content, frag);
 		}
 		//If the tab clicked is in position 2, switch to Connect Activity

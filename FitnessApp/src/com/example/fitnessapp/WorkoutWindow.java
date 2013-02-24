@@ -94,9 +94,9 @@ public class WorkoutWindow extends Activity {
 					fos.write(newLog.getBytes());
 					fos.close();
 					
-					Toast toast = Toast.makeText(getApplicationContext(), "Saved Log.", Toast.LENGTH_SHORT);
+					/*Toast toast = Toast.makeText(getApplicationContext(), "Saved Log.", Toast.LENGTH_SHORT);
 					toast.setGravity(Gravity.TOP, 25, 400);
-					toast.show();
+					toast.show();*/
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -113,9 +113,9 @@ public class WorkoutWindow extends Activity {
 				    while ((inputString = inputReader.readLine()) != null) {
 				        stringBuffer.append(inputString + "\n");
 				    }
-				    Toast toast = Toast.makeText(getApplicationContext(), stringBuffer.toString(), Toast.LENGTH_SHORT);
+				    /*Toast toast = Toast.makeText(getApplicationContext(), stringBuffer.toString(), Toast.LENGTH_SHORT);
 					toast.setGravity(Gravity.TOP, 25, 400);
-					toast.show();
+					toast.show();*/
 				} catch (IOException e) {
 				    e.printStackTrace();
 				}

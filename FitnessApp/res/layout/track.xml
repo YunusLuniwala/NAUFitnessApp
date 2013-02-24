@@ -1,46 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="#263765">
- 
-  <!-- Screen Design for Track -->
-  <TextView android:text="Workout"
-      		android:textColor="#FFFFFF"
-            android:padding="15dip"
-            android:textSize="18dip"
-            android:gravity="center"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
-  
-  <Button
-      android:id="@+id/scanCode"
-      android:textColor="#FFFFFF"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Scan Machine" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#263765"
+    android:orientation="vertical" >
 
-  <Button
-      android:id="@+id/manualEnter"
-      android:textColor="#FFFFFF"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Add New Workout To Log" />
+    <!-- Screen Design for Track -->
 
-  <Button
-      android:id="@+id/viewLog"
-      android:textColor="#FFFFFF"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="View Workout Log" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dip"
+        android:text="Workout"
+        android:textColor="#FFFFFF"
+        android:textSize="18dip" />
 
-  <Button
-      android:id="@+id/trainerBio"
-      android:textColor="#FFFFFF"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Personal Trainers" />
- 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/scanMachine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="31dp"
+        android:background="@null"
+        android:src="@drawable/scan"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scanMachine"
+        android:layout_alignRight="@+id/scanMachine"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="33dp"
+        android:gravity="center"
+        android:text="Scan Machine"
+        android:textColor="#FFFFFF" />
+
+    <ImageButton
+        android:id="@+id/viewWorkoutLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/scanMachine"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/scanMachine"
+        android:layout_marginRight="31dp"
+        android:background="@null"
+        android:src="@drawable/notebook" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/viewWorkoutLog"
+        android:gravity="center"
+        android:text="View Workout Log"
+        android:textColor="#FFFFFF" />
+
+    <ImageButton
+        android:id="@+id/newLogEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scanMachine"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:background="@null"
+        android:src="@drawable/newpage" />
+
+    <ImageButton
+        android:id="@+id/getTrainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/viewWorkoutLog"
+        android:layout_alignTop="@+id/newLogEntry"
+        android:background="@null"
+        android:src="@drawable/trainer" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newLogEntry"
+        android:layout_alignLeft="@+id/newLogEntry"
+        android:gravity="center"
+        android:text="Add New Log Entry"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView02"
+        android:layout_alignBottom="@+id/TextView02"
+        android:layout_alignRight="@+id/TextView01"
+        android:gravity="center"
+        android:text="Get Personal Trainer"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

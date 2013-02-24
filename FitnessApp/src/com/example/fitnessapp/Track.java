@@ -10,14 +10,16 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
  
 public class Track extends SherlockFragment {
-	Button scanButton;
-	Button manualButton;
-	Button readButton;
-	Button trainerButton;
+	
+	ImageButton scanButton;
+	ImageButton manualButton;
+	ImageButton readButton;
+	ImageButton trainerButton;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,10 @@ public class Track extends SherlockFragment {
 	public void initializeApp()
     {
     	//Loads the logoButton from the layout file
-    	scanButton = (Button) getActivity().findViewById(R.id.scanCode);
-    	readButton = (Button) getActivity().findViewById(R.id.viewLog);
-    	manualButton = (Button) getActivity().findViewById(R.id.manualEnter);
-    	trainerButton = (Button) getActivity().findViewById(R.id.trainerBio);
+    	scanButton = (ImageButton) getActivity().findViewById(R.id.scanMachine);
+    	readButton = (ImageButton) getActivity().findViewById(R.id.viewWorkoutLog);
+    	manualButton = (ImageButton) getActivity().findViewById(R.id.newLogEntry);
+    	trainerButton = (ImageButton) getActivity().findViewById(R.id.getTrainer);
     	
     	
     	//Sets the listener for the button for when its clicked
@@ -89,9 +91,9 @@ public class Track extends SherlockFragment {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
                 // Handle successful scan
-                Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Content:" + contents + " Format:" + format , Toast.LENGTH_LONG);
+                /*Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Content:" + contents + " Format:" + format , Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP, 25, 400);
-                toast.show();
+                toast.show();*/
                 //Start a new Intent - MainScreen
                 Intent nextScreen = new Intent(getActivity().getApplicationContext(), WorkoutWindow.class);
                 nextScreen.putExtra("workout", contents);
@@ -100,9 +102,9 @@ public class Track extends SherlockFragment {
                 startActivity(nextScreen);
             } else if (resultCode == 0) {
                 // Handle cancel
-                Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Scan was Cancelled!", Toast.LENGTH_LONG);
+                /*Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Scan was Cancelled!", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP, 25, 400);
-                toast.show();
+                toast.show();*/
                 
             }
         }

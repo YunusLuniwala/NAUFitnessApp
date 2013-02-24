@@ -7,6 +7,7 @@
   android:background="#263765">
  
   <!-- Screen Design for Connect -->
+
   <TextView android:text="News Feed"
       		android:textColor="#FFFFFF"
             android:padding="15dip"
@@ -19,16 +20,24 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent" >
 
-      <Button
-          android:id="@+id/newsButton"
-          android:layout_width="150dp"
-          android:textColor="#FFFFFF"
+      <ImageButton
+          android:id="@+id/refreshNews"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentRight="true"
-          android:layout_marginBottom="63dp"
-          android:text="Click to View News Feed" />
+          android:layout_centerHorizontal="true"
+          android:layout_centerVertical="true"
+          android:background="@null"
+          android:src="@drawable/refresh" />
+
+      <TextView
+          android:id="@+id/TextView02"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/refreshNews"
+          android:layout_centerHorizontal="true"
+          android:gravity="center"
+          android:text="Click to Refresh News Feed"
+          android:textColor="#FFFFFF" />
 
   </RelativeLayout>
  

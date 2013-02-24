@@ -19,27 +19,86 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent" >
 
-      <Button
-          android:id="@+id/classButton"
-          android:layout_width="150dp"
-          android:textColor="#FFFFFF"
+      <TextView
+          android:id="@+id/textView5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView2"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="22dp"
+          android:text="Weekly: 8am-8pm"
+          android:textColor="#FFFFFF" />
+
+      <TextView
+          android:id="@+id/textView6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView3"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="22dp"
+          android:text="Weekly: 11:30am-1:30pm amd 7pm-9pm"
+          android:textColor="#FFFFFF" />
+
+      <ImageButton
+          android:id="@+id/viewSchedules"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentRight="true"
-          android:layout_marginBottom="63dp"
-          android:text="Class Schedule" />
+          android:layout_centerHorizontal="true"
+          android:background="@null"
+          android:src="@drawable/schedule" />
 
-      <Button
-          android:id="@+id/buildingButton"
-          android:layout_width="150dp"
-          android:textColor="#FFFFFF"
+      <TextView
+          android:id="@+id/textView1"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentRight="true"
           android:layout_alignParentTop="true"
-          android:layout_marginTop="76dp"
-          android:text="Building Hours" />
+          android:layout_centerHorizontal="true"
+          android:text="Campus Recreation Center"
+          android:textColor="#FFFFFF"
+          android:textSize="15sp" />
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView4"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="22dp"
+          android:text="Fitness Center"
+          android:textColor="#FFFFFF"
+          android:textSize="15sp" />
+
+      <TextView
+          android:id="@+id/textView4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/textView1"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="22dp"
+          android:text="Weekly: 6am-10pm"
+          android:textColor="#FFFFFF" />
+
+      <TextView
+          android:id="@+id/textView3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@+id/textView5"
+          android:layout_marginTop="22dp"
+          android:text="Wall Aquatic Center"
+          android:textColor="#FFFFFF"
+          android:textSize="15sp" />
+
+      <TextView
+          android:id="@+id/TextView01"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/viewSchedules"
+          android:layout_centerHorizontal="true"
+          android:text="Click to View Class Schedules"
+          android:textSize="18sp"
+          android:textColor="#FFFFFF" />
 
   </RelativeLayout>
  
