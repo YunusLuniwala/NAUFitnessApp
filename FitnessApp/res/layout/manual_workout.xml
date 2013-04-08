@@ -5,107 +5,143 @@
     android:orientation="vertical" 
     android:background="#263765">
 
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-
-
+        <AutoCompleteTextView
+            android:id="@+id/exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter Exercise Here"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/sets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="75dp"
-            android:textSize="30dp"
-            android:text="SETS"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/reps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/sets"
-            android:layout_centerVertical="true"
-            android:textSize="30dp"
-            android:text="REPS"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/reps"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="75dp"
-            android:textSize="30dp"
-            android:text="WEIGHT"
-            android:textColor="#FFFFFF" />
-
+            android:layout_below="@+id/exercise"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="34dp"
+            android:text="Number of Sets:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+        
         <EditText
             android:id="@+id/setsField"
-            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/sets"
             android:layout_alignBottom="@+id/sets"
-            android:layout_marginLeft="32dp"
-            android:layout_toRightOf="@+id/weight"
-            android:ems="10"
-            android:inputType="number" >
+            android:layout_alignParentRight="true"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
 
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/repsField"
-            android:textColor="#FFFFFF"
+        <TextView
+            android:id="@+id/setsAlert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/reps"
-            android:layout_alignLeft="@+id/setsField"
-            android:ems="10"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/weightField"
+            android:layout_alignLeft="@+id/sets"
+            android:layout_below="@+id/setsField"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Same Reps/Weight For All Sets?"
             android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/weight"
-            android:layout_alignLeft="@+id/repsField"
-            android:ems="10"
-            android:inputType="number" />
-
-        <Button
+            android:visibility="gone"
+            android:textSize="18dp" />
+        
+         <Button
             android:id="@+id/button1"
-            android:textColor="#FFFFFF"
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:text="SAVE" />
+            android:text="SAVE"
+            android:textColor="#FFFFFF" />
 
-        <EditText
-            android:id="@+id/exercise"
+         <ToggleButton
+             android:id="@+id/sameWR"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/exercise"
+             android:layout_below="@+id/setsAlert"
+             android:layout_marginTop="22dp"
+             android:textOn="Yes" 
+             android:visibility="gone"
+    		 android:textOff="Yes" />
+
+         <ToggleButton
+             android:id="@+id/diffWR"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/sameWR"
+             android:layout_alignBottom="@+id/sameWR"
+             android:layout_alignRight="@+id/exercise"
+             android:textOn="No" 
+             android:visibility="gone"
+    		 android:textOff="No" />
+         
+         <TextView
+            android:id="@+id/reps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/diffWR"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="34dp"
+            android:text="Number of Reps:"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            android:textSize="20sp" />
+        
+        <EditText
+            android:id="@+id/repsField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/reps"
+            android:layout_alignBottom="@+id/reps"
+            android:layout_alignParentRight="true"
+            android:ems="5"
             android:gravity="center"
-            android:ems="10" 
-            android:textSize="15dp"
-            android:hint="Enter Exercise Here"
-            android:textColor="#FFFFFF"/>
+            android:inputType="number"
+            android:visibility="gone"
+            android:textColor="#FFFFFF" />
+        
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/reps"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="34dp"
+            android:text="Weight:"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            android:textSize="20sp" />
+        
+        <EditText
+            android:id="@+id/weightField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/weight"
+            android:layout_alignBottom="@+id/weight"
+            android:layout_alignParentRight="true"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:visibility="gone"
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
->
-    
 
 </LinearLayout>

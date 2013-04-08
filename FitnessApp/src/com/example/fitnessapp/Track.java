@@ -1,6 +1,11 @@
 package com.example.fitnessapp;
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import com.actionbarsherlock.app.SherlockFragment;
 
 import android.content.Intent;
@@ -66,7 +71,46 @@ public class Track extends SherlockFragment {
     	manualButton.setOnClickListener(new OnClickListener() {
    		 
 			public void onClick(View arg0) {
+				String[] exArray;
+				ArrayList<String> tempArray = new ArrayList<String>();
+		    	
+		    	String FILENAME = "exerciselog.txt";
+				try {
+				    BufferedReader inputReader = new BufferedReader(new InputStreamReader(
+				            getActivity().openFileInput(FILENAME)));
+				    String inputString;   
+				    
+				    int count = 0;
+				    while ((inputString = inputReader.readLine()) != null && count < 20) {
+				    	String exercise;
+				    	
+				    	int indexStart;
+				    	int indexEnd;
+				    	
+				    	indexStart = inputString.indexOf("WORKOUT:") + 9;
+				    	indexEnd = inputString.indexOf(" LAPS");
+				    	if(indexEnd == -1){
+				    		indexEnd = inputString.indexOf(" SETS");
+				    		exercise = inputString.substring(indexStart, indexEnd);
+				    		tempArray.add(exercise);
+				    		count++;
+				    	}else {
+				    		exercise = inputString.substring(indexStart, indexEnd);
+				    		tempArray.add(exercise);
+				    		count++;
+				    	}
+				    }
+				} catch (IOException e) {
+				    e.printStackTrace();
+				}
+				exArray = tempArray.toArray(new String[tempArray.size()]);
+				
+				
 				Intent nextScreen = new Intent(getActivity().getApplicationContext(), ManualWorkout.class);
+				
+				Bundle b=new Bundle();
+				b.putStringArray("array", exArray);
+				nextScreen.putExtras(b);
                 
                 //Start this activity - Replace this Screen with the new activity
                 startActivity(nextScreen);
@@ -91,13 +135,9 @@ public class Track extends SherlockFragment {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
                 // Handle successful scan
-                /*Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Content:" + contents + " Format:" + format , Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP, 25, 400);
-                toast.show();*/
                 //Start a new Intent - MainScreen
                 Intent nextScreen = new Intent(getActivity().getApplicationContext(), WorkoutWindow.class);
                 nextScreen.putExtra("workout", contents);
-                
                 //Start this activity - Replace this Screen with the new activity
                 startActivity(nextScreen);
             } else if (resultCode == 0) {

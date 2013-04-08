@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/customdialog"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:padding="10dp"
+>
+<TextView
+android:id="@+id/dialogtextview"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:text="Enter the Weight for the Selected Set"
+/>
+<EditText
+android:id="@+id/dialogedittext"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:inputType="number"
+/>
+<TextView
+android:id="@+id/dialogtextview2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:text="Enter the Reps for the Selected Set"
+/>
+<EditText
+android:id="@+id/dialogedittext2"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:inputType="number"
+/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/customsetbuttons1"
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:weightSum="3"
+>
+<ToggleButton
+    android:id="@+id/button1"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:checked="true"
+    android:textOn="Set 1" 
+    android:textOff="Set 1"/>
+<ToggleButton
+    android:id="@+id/button2"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:textOn="Set 2" 
+    android:textOff="Set 2"/>
+<ToggleButton
+    android:id="@+id/button3"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 3" 
+    android:textOff="Set 3"/>
+
+</LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/customsetbuttons2"
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:weightSum="3"
+>
+<ToggleButton
+    android:id="@+id/button4"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 4" 
+    android:textOff="Set 4"/>
+<ToggleButton
+    android:id="@+id/button5"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 5" 
+    android:textOff="Set 5"/>
+<ToggleButton
+    android:id="@+id/button6"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 6" 
+    android:textOff="Set 6"/>
+
+</LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/customsetbuttons3"
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:weightSum="3"
+>
+<ToggleButton
+    android:id="@+id/button7"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 7" 
+    android:textOff="Set 7"/>
+<ToggleButton
+    android:id="@+id/button8"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 8" 
+    android:textOff="Set 8"/>
+<ToggleButton
+    android:id="@+id/button9"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 9" 
+    android:textOff="Set 9"/>
+
+</LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/customsetbuttons4"
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:weightSum="3"
+>
+<ToggleButton
+    android:id="@+id/button10"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 10" 
+    android:textOff="Set 10"/>
+<ToggleButton
+    android:id="@+id/button11"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 11" 
+    android:textOff="Set 11"/>
+<ToggleButton
+    android:id="@+id/button12"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:tag="1"
+    android:visibility="gone"
+    android:textOn="Set 12" 
+    android:textOff="Set 12"/>
+
+</LinearLayout>
+<Button
+android:id="@+id/dialogdismiss"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:text="Done"
+/>
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="Preview" />
+
+<TextView
+    android:id="@+id/exercisepreview"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="Exercise" />
+<TextView
+    android:id="@+id/contentpreview"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="Content" />
+
+</LinearLayout>

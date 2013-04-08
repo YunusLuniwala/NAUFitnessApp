@@ -45,6 +45,9 @@ public class LogScrollView extends Activity {
 		    int count = 0;
 		    while ((inputString = inputReader.readLine()) != null) {
 		    	String date;
+		    	String day;
+		    	String month;
+		    	String year;
 		    	String exercise;
 		    	String sets;
 		    	String reps;
@@ -52,7 +55,39 @@ public class LogScrollView extends Activity {
 		    	int indexStart = inputString.indexOf("Date:") + 6;
 		    	int indexEnd = inputString.indexOf(", WORKOUT");
 		    	date = inputString.substring(indexStart, indexEnd);
-		    	
+		    	year = date.substring(0,4);
+		    	month = date.substring(5,7);
+		    	day = date.substring(8,10);
+		    	switch (Integer.parseInt(month))
+		    	{
+		    		case 1:  month = "January";
+		    		break;
+		    		case 2:  month = "February";
+		    		break;
+		    		case 3:  month = "March";
+		    		break;
+		    		case 4:  month = "April";
+		    		break;
+		    		case 5:  month = "May";
+		    		break;
+		    		case 6:  month = "June";
+		    		break;
+		    		case 7:  month = "July";
+		    		break;
+		    		case 8:  month = "August";
+		    		break;
+		    		case 9:  month = "September";
+		    		break;
+		    		case 10: month = "October";
+		    		break;
+		    		case 11: month = "November";
+		    		break;
+       				case 12: month = "December";
+       				break;
+       				default: month = "January";
+                	break;
+		    	}
+		    	date = month + " " + day + " " + year;
 		    	indexStart = inputString.indexOf("WORKOUT:") + 9;
 		    	indexEnd = inputString.indexOf(" LAPS");
 		    	if(indexEnd == -1){
@@ -75,23 +110,25 @@ public class LogScrollView extends Activity {
 			    	indexStart = inputString.indexOf("TIME:") + 5;
 			    	reps = inputString.substring(indexStart, inputString.length());
 		    	}
-		    	date = date.substring(0,10);
-		    	String content = exercise + " " + sets + "sets X " + reps + "reps";
-		    	tl.addView(this.tableChild(date,content));
+		    	//date = date.substring(0,10);
+		    	String content = sets + " sets -" + reps;
+		    	tl.addView(this.tableChild(date,content,exercise.toUpperCase()));
 		    }
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
     }
     
-    private View tableChild(String str1, String str2) {
+    private View tableChild(String str1, String str2, String str3) {
     	TableRow tr = new TableRow(this);
         View v = LayoutInflater.from(this).inflate(R.layout.list_row, tr, false);
         //want to get childs of row for example TextView, get it like this:
         TextView date = (TextView)v.findViewById(R.id.title);
         date.setText(str1);
         TextView content = (TextView)v.findViewById(R.id.content);
-        content.setText(str2);
+        content.setText(str3);
+        TextView content2 = (TextView)v.findViewById(R.id.content2);
+        content2.setText(str2);
         return v;//have to return View child, so return made 'v'
     }
     

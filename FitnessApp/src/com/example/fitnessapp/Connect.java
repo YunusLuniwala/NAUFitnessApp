@@ -3,8 +3,10 @@ package com.example.fitnessapp;
 import com.actionbarsherlock.app.SherlockFragment;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +40,14 @@ public class Connect extends SherlockFragment {
 				//Start a new Intent - Scanner
 				//http://www.youtube.com/watch?v=FT0DpLkQYMU&feature=g-logo
 				//startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
-				Uri uri = Uri.parse("http://www.peerfit.com/facility.php?groups_id=435");
-				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-				startActivity(intent);
+				// <iframe width="700" height="470" src="http://www.peerfit.com/embed?groups_id=435" frameborder="0"></iframe>
+				//Uri uri = Uri.parse("http://www.peerfit.com/facility.php?groups_id=435");
+				//Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				//startActivity(intent);
+				Intent nextScreen = new Intent(getActivity().getApplicationContext(), PeerViewer.class);
+                
+                //Start this activity - Replace this Screen with the new activity
+                startActivity(nextScreen);
 			}
  
 		});

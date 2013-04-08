@@ -85,7 +85,7 @@ public class News_List extends ListActivity {
            }
            //convert response to string
            try{
-           BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+        	   	  BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
                   StringBuilder sb = new StringBuilder();
                   String line = null;
                   while ((line = reader.readLine()) != null) {
@@ -101,7 +101,7 @@ public class News_List extends ListActivity {
            //parse json data
            try{
          	  
-           String data = null;
+        	      String data = null;
                   JSONArray jArray = new JSONArray(result);
                   for(int i=0;i<jArray.length();i++){
                           JSONObject json_data = jArray.getJSONObject(i);

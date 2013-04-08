@@ -7,6 +7,10 @@ import android.widget.ImageButton;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+import com.parse.PushService;
 
 public class SplashActivity extends Activity {
 
@@ -18,8 +22,11 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         //Sets the layout to use the correct file
         setContentView(R.layout.splash);
-        
+        Parse.initialize(this, "bKoHRuWZvgWQILgo2TACR63SoQQVEl8A0kkU95n4", "Whm50zhLYVoxBgOTw90Z5ZoeGTwSo8FCTY8Tqy7e"); 
         initializeApp();
+        PushService.subscribe(this, "", SplashActivity.class);
+        PushService.setDefaultPushCallback(this, SplashActivity.class);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
     }
     
     public void initializeApp()
